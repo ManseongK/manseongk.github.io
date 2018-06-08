@@ -1,29 +1,31 @@
-    <script>
+
+
+<script>
     (function($) {
         "use strict";
-        var YLEN = 3, // Çà ±æÀÌ
-            XLEN = 3, // ¿­ ±æÀÌ
-            blank = YLEN * XLEN - 1, // ºóÄ­ À§Ä¡
-            BLANK = 0, // ºóÄ­ÀÇ °ª
-            board = [], // º¸µå ¹è¿­ (YLEN x XLEN)
-            boardEl = $('#board'); // Å×ÀÌºí ¿¤¸®¸ÕÆ®
+        var YLEN = 3, // í–‰ ê¸¸ì´
+            XLEN = 3, // ì—´ ê¸¸ì´
+            blank = YLEN * XLEN - 1, // ë¹ˆì¹¸ ìœ„ì¹˜
+            BLANK = 0, // ë¹ˆì¹¸ì˜ ê°’
+            board = [], // ë³´ë“œ ë°°ì—´ (YLEN x XLEN)
+            boardEl = $('#board'); // í…Œì´ë¸” ì—˜ë¦¬ë¨¼íŠ¸
 
-        function initPuzzle() { // ÆÛÁñ µ¥ÀÌÅÍ¸¦ ÃÊ±âÈ­
+        function initPuzzle() { // í¼ì¦ ë°ì´í„°ë¥¼ ì´ˆê¸°í™”
             board = [];
             for (var y = 0; y < YLEN; y++) {
-                board[y] = []; // °¢ Çà¸¶´Ù ¿­ ¹è¿­ ¼³Á¤
+                board[y] = []; // ê° í–‰ë§ˆë‹¤ ì—´ ë°°ì—´ ì„¤ì •
                 for (var x = 0; x < XLEN; x++) {
                     var idx = y * XLEN + x;
-                    if (idx < blank) board[y][x] = idx + 1; // ¼ø¼­´ë·Î ¼ıÀÚ ÇÒ´ç
-                    else board[y][x] = BLANK; // ¸¶Áö¸· ºóÄ­ ¼³Á¤
+                    if (idx < blank) board[y][x] = idx + 1; // ìˆœì„œëŒ€ë¡œ ìˆ«ì í• ë‹¹
+                    else board[y][x] = BLANK; // ë§ˆì§€ë§‰ ë¹ˆì¹¸ ì„¤ì •
                 }
             }
-            // ÀÌµ¿ ¹æÇâ
+            // ì´ë™ ë°©í–¥
             var moves = ['r', 'l', 'd', 'u'];
-            for (var z = 0; z < 500; z++) { // 500È¸ µ¿¾È ¹«ÀÛÀ§·Î ÀÌµ¿
+            for (var z = 0; z < 500; z++) { // 500íšŒ ë™ì•ˆ ë¬´ì‘ìœ„ë¡œ ì´ë™
                 move(moves[parseInt(Math.random() * 4,10)], false);
             }
-            // µ¥ÀÌÅÍ ÃÊ±âÈ­ ÈÄ È­¸é °»½Å
+            // ë°ì´í„° ì´ˆê¸°í™” í›„ í™”ë©´ ê°±ì‹ 
             updateBoard();
         }
 
@@ -41,14 +43,14 @@
             }
         }
 
-        function updateBoard() { // ÆÛÁñ µ¥ÀÌÅÍ¸¦ È­¸é¿¡ Ç¥½Ã
-            boardEl.empty(); // Å×ÀÌºíÀ» ºñ¿ì°í
+        function updateBoard() { // í¼ì¦ ë°ì´í„°ë¥¼ í™”ë©´ì— í‘œì‹œ
+            boardEl.empty(); // í…Œì´ë¸”ì„ ë¹„ìš°ê³ 
             var html = '';
             for (var y = 0; y < YLEN; y++) {
                 html += '<tr>';
                 for (var x = 0; x < XLEN; x++) {
                     if (board[y][x] != BLANK) html += '<td class="num" data-index="' + (y * XLEN + x) + '">' + board[y][x] + '</td>';
-                    else html += '<td class="blank">&nbsp;</td>'; // ºóÄ­
+                    else html += '<td class="blank">&nbsp;</td>'; // ë¹ˆì¹¸
                 }
                 html += '</tr>';
             }
@@ -57,53 +59,53 @@
             $('td.num', boardEl).click(numClick);
         }
 
-        function moveTo(to) { // ºóÄ­À» to À§Ä¡·Î ÀÌµ¿
-            // ºóÄ­¿¡ to À§Ä¡ÀÇ ¼ıÀÚ ¿Å±â°í
+        function moveTo(to) { // ë¹ˆì¹¸ì„ to ìœ„ì¹˜ë¡œ ì´ë™
+            // ë¹ˆì¹¸ì— to ìœ„ì¹˜ì˜ ìˆ«ì ì˜®ê¸°ê³ 
             board[parseInt(blank / YLEN,10)][blank % XLEN] = board[parseInt(to / YLEN,10)][to % XLEN];
-            // to À§Ä¡¿¡ ºóÄ­ °ª ¼³Á¤
+            // to ìœ„ì¹˜ì— ë¹ˆì¹¸ ê°’ ì„¤ì •
             board[parseInt(to / YLEN,10)][to % XLEN] = BLANK;
-            // to À§Ä¡¸¦ ºóÄ­À¸·Î ¼³Á¤
+            // to ìœ„ì¹˜ë¥¼ ë¹ˆì¹¸ìœ¼ë¡œ ì„¤ì •
             blank = to;
-            // È­¸é °»½Å
+            // í™”ë©´ ê°±ì‹ 
             updateBoard();
         }
 
         function isEnd() {
             for (var y = 0; y < YLEN; y++) {
                 for (var x = 0; x < XLEN; x++) {
-                    var expect = y * XLEN + x + 1;  // ±â´ë°ª
-                    if (y * XLEN + x < YLEN * XLEN - 1) { // ¸¶Áö¸· Ä­Àº Á¦¿Ü
-                        if (board[y][x] != expect) return; // ±â´ë°ªÀÌ ¾Æ´Ï¸é Áß´Ü
+                    var expect = y * XLEN + x + 1;  // ê¸°ëŒ€ê°’
+                    if (y * XLEN + x < YLEN * XLEN - 1) { // ë§ˆì§€ë§‰ ì¹¸ì€ ì œì™¸
+                        if (board[y][x] != expect) return; // ê¸°ëŒ€ê°’ì´ ì•„ë‹ˆë©´ ì¤‘ë‹¨
                     }
                 }
             }
-            // ¿©±â ±îÁö ÄÚµå°¡ ÁøÇà µÆ´Ù¸é. ¼º°ø.
+            // ì—¬ê¸° ê¹Œì§€ ì½”ë“œê°€ ì§„í–‰ ëë‹¤ë©´. ì„±ê³µ.
             alert('ok');
         }
 
-        function move(d, human) { // ÀÌµ¿ (°¡´ÉÇÑ °æ¿ì)
-            // d : ÀÌµ¿ ¹æÇâ
-            // human : »ç¶÷ÀÌ ÀÌµ¿ Çß´ÂÁö ¿©ºÎ (ÃÊ±âÈ­¸¦ À§ÇØ)
+        function move(d, human) { // ì´ë™ (ê°€ëŠ¥í•œ ê²½ìš°)
+            // d : ì´ë™ ë°©í–¥
+            // human : ì‚¬ëŒì´ ì´ë™ í–ˆëŠ”ì§€ ì—¬ë¶€ (ì´ˆê¸°í™”ë¥¼ ìœ„í•´)
             switch (d) {
-                case 'r': // right : ºóÄ­ÀÌ ¸Ç ÁÂÃøÀÌ ¾Æ´Ï¸é ºóÄ­À» ÁÂÃøÀ¸·Î ÀÌµ¿
+                case 'r': // right : ë¹ˆì¹¸ì´ ë§¨ ì¢Œì¸¡ì´ ì•„ë‹ˆë©´ ë¹ˆì¹¸ì„ ì¢Œì¸¡ìœ¼ë¡œ ì´ë™
                     if (blank % XLEN > 0) moveTo(blank - 1);
                     break;
-                case 'l': // left : ºóÄ­ÀÌ ¸Ç ¿ìÃøÀÌ ¾Æ´Ï¸é ºóÄ­À» ¿ìÃøÀ¸·Î ÀÌµ¿
+                case 'l': // left : ë¹ˆì¹¸ì´ ë§¨ ìš°ì¸¡ì´ ì•„ë‹ˆë©´ ë¹ˆì¹¸ì„ ìš°ì¸¡ìœ¼ë¡œ ì´ë™
                     if (blank % XLEN < XLEN - 1) moveTo(blank + 1);
                     break;
-                case 'd': // down : ºóÄ­ÀÌ ¸à À§°¡ ¾Æ´Ï¸é ºóÄ­À» À§·Î ÀÌµ¿
+                case 'd': // down : ë¹ˆì¹¸ì´ ë©˜ ìœ„ê°€ ì•„ë‹ˆë©´ ë¹ˆì¹¸ì„ ìœ„ë¡œ ì´ë™
                     if (parseInt(blank / YLEN,10) > 0) moveTo(blank - XLEN);
                     break;
-                case 'u': // up : ºóÄ­ÀÌ ¸Ç ¾Æ·¡°¡ ¾Æ´Ï¸é ºóÄ­À» ¾Æ·¡·Î ÀÌµ¿
+                case 'u': // up : ë¹ˆì¹¸ì´ ë§¨ ì•„ë˜ê°€ ì•„ë‹ˆë©´ ë¹ˆì¹¸ì„ ì•„ë˜ë¡œ ì´ë™
                     if (parseInt(blank / YLEN,10) < YLEN - 1) moveTo(blank + XLEN);
                     break;
             }
-            // »ç¶÷ÀÌ ¿òÁ÷¿´´Ù¸é ¿Ï·á ¿©ºÎ Ã¼Å©
+            // ì‚¬ëŒì´ ì›€ì§ì˜€ë‹¤ë©´ ì™„ë£Œ ì—¬ë¶€ ì²´í¬
             if (human) isEnd();
         }
 
         $(document).keydown(function (e) {
-            // ´­¸° Å°¿¡ µû¶ó ÀÌµ¿
+            // ëˆŒë¦° í‚¤ì— ë”°ë¼ ì´ë™
             switch (e.which) {
                 case 37:
                     move('l', true);
@@ -120,7 +122,7 @@
             }
         });
 
-        initPuzzle(); // º¸µå µ¥ÀÌÅÍ ÃÊ±âÈ­
+        initPuzzle(); // ë³´ë“œ ë°ì´í„° ì´ˆê¸°í™”
 
     })(jQuery);
     </script>
