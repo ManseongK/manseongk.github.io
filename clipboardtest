@@ -8,5 +8,5 @@ function text_copy(){
 }
 </script>
 
-<textarea name="pagelink" cols="70" rows="1" id="pagelink">이글이 복사됩니다</textarea>
-<input name="button" type="button" onclick="text_copy();" value="복사하기"> 
+<textarea name="CCCCC" cols="70" rows="1" id="CCCCC">이글이 복사됩니다</textarea>
+<input name="button" type="button" onclick="text_copy();" value="C"> 
