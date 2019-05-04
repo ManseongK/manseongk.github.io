@@ -1,12 +1,4 @@
-<script type="text/JavaScript">
-function text_copy(){
-   var doc = document.body.createTextRange();
-   doc.moveToElementText(document.all("pagelink"));
-   doc.select();
-   doc.execCommand('copy');
-   alert('소스가 저장되었습니다. 붙여넣기 하시면 됩니다.');
-}
-</script>
+$("button").click(function(){ $("textarea").select(); document.execCommand('copy'); });
 
-<textarea name="CCCCC" cols="70" rows="1" id="CCCCC">이글이 복사됩니다</textarea>
-<input name="button" type="button" onclick="text_copy();" value="C"> 
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script> <button>Select</button> <br/> <textarea></textarea>
+
