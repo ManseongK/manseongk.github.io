@@ -26,11 +26,7 @@ function copyToClipboard(elementId) {
 
 
 <!--복사할 텍스트 만들기-->
-<p id="text1">텍스트 복사에 성공 하였습니다. </p>
+<p id="text1">CCCC</p>
 
   <!--// 버튼 만들기-->
-<button onclick="copyToClipboard('text1')">텍스트 복사하기</button>
-
-  <!--input 란 만들기-->
-<br /><br /><input placeholder="이곳에 ctrl+v로 붙여넣기 테스트" type="text">
-
+<button onclick="copyToClipboard('text1')">ONON</button>
