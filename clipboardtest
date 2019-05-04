@@ -6,7 +6,7 @@
     </head>
     <body>
         <span id="textDiv">CC</span>
-        <button id="copyBtn">왼쪽 텍스트 복사하기</button>
+        <button id="copyBtn">아이템 </button>
         <script>
             var copyBtn = document.getElementById("copyBtn");
             // 버튼 클릭 이벤트
