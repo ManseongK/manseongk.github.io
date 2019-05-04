@@ -1,13 +1,32 @@
-<p id="p1">복사하고 싶은 텍스트</p>
-<button onclick="copyToClipboard('#p1')">텍스트 복사</button>
-
-<script>
-function copyToClipboard(element) {
-var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-document.execCommand("copy");
-  $temp.remove();
-alert("copy complete"); //Optional Alert, 삭제해도 됨
-}
-</script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>클립보드 복사 기능</title>
+    </head>
+    <body>
+        <span id="textDiv">이 텍스트 값을 복사하도록 하겠습니다.</span>
+        <button id="copyBtn">왼쪽 텍스트 복사하기</button>
+        <script>
+            var copyBtn = document.getElementById("copyBtn");
+            // 버튼 클릭 이벤트
+            copyBtn.addEventListener("click", function(){
+               // 복사할 텍스트를 변수에 할당해줍니다.
+                var text = document.getElementById("textDiv").innerText;
+                // input text 태그를 생성해줍니다.
+                var createInput = document.createElement("input");
+                createInput.setAttribute("type", "text");
+                // 가상으로 가져올 태그에 만들어준 input 태그를 붙여줍니다.
+                document.getElementById("textDiv").appendChild(createInput);
+                // 만든 input 태그의 value 값에 복사할 텍스트 값을 넣어줍니다.
+                createInput.value = text;
+                // 복사 기능을 수행한 후
+                createInput.select();
+                document.execCommand('copy');
+                // 가상으로 붙여주었던 input 태그를 제거해줍니다.
+                document.getElementById("textDiv").removeChild(createInput);
+                alert('복사가 완료되었습니다.');
+            });
+        </script>
+    </body>
+</html>
