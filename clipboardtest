@@ -1,0 +1,13 @@
+<head>
+<script type="text/javascript">
+function copyClipBoard(URL) {
+   if (window.clipboardData.setData("text", URL))
+     alert("URL is copied in your clipboard");
+   else
+     alert("Coping URL is failed");
+}
+</script>
+</head>
+<a href="javascript:copyClipBoard('ONONONON')">
+<img src="img/data/event/event_0321/img01_btn.gif" width="60" height="60" border="0" />
+</a>
