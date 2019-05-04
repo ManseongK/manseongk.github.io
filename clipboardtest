@@ -5,7 +5,7 @@
         <title>클립보드 복사 기능</title>
     </head>
     <body>
-        <span id="textDiv">이 텍스트 값을 복사하도록 하겠습니다.</span>
+        <span id="textDiv">CC</span>
         <button id="copyBtn">왼쪽 텍스트 복사하기</button>
         <script>
             var copyBtn = document.getElementById("copyBtn");
