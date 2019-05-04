@@ -1,3 +1,19 @@
+
+<head>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	margin-left: 0px;
+}
+.auto-style3 {
+	text-align: center;
+	color: #FF0000;
+}
+</style>
+</head>
+
 <script>
 
 // 클립보드로 복사하는 기능을 생성
@@ -22,11 +38,15 @@ function copyToClipboard(elementId) {
   document.body.removeChild(aux);
 
 }
+
 </script>
 
-
 <!--복사할 텍스트 만들기-->
-<p id="text1">CCCC</p>
 
   <!--// 버튼 만들기-->
-<button onclick="copyToClipboard('text1')">ONON</button>
+<p class="auto-style1">
+<img height="300" img src="http://pds26.egloos.com/pds/201806/17/91/c0249191_5b2648c48af1e.jpg" width="600"></p>
+<p class="auto-style1">
+<button onclick="copyToClipboard('text1')" class="auto-style2" style="height: 80px; width: 600px">
+<p id="text1" class="auto-style3" style="height: 20px"><strong>CCCC</strong></p>
+아이템획득</button></p>
