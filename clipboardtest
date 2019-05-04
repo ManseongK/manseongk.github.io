@@ -1,11 +1,12 @@
-<script type="text/javascript" language="javascript">
+<script type="text/JavaScript">
+function text_copy(){
+   var doc = document.body.createTextRange();
+   doc.moveToElementText(document.all("pagelink"));
+   doc.select();
+   doc.execCommand('copy');
+   alert('소스가 저장되었습니다. 붙여넣기 하시면 됩니다.');
+}
+</script>
 
-  <!--
-   function clipboard(str){
-    window.clipboardData.setData('Text',str);
-    alert("클립보드에 복사되었습니다.");
-   }
-  //-->
- </script>
-
-<a href="javascript:clipboard('클립보드');">클립보드</a>
+<textarea name="pagelink" cols="70" rows="1" id="pagelink">이글이 복사됩니다</textarea>
+<input name="button" type="button" onclick="text_copy();" value="복사하기"> 
