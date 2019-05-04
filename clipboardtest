@@ -50,6 +50,6 @@ function copyToClipboard(elementId) {
 <img height="300" img src="http://pds26.egloos.com/pds/201806/17/91/c0249191_5b2648c48af1e.jpg" width="600"></p>
 <p class="auto-style1">
 <button onclick="copyToClipboard('text1')" class="auto-style2" style="height: 80px; width: 600px">
-<h1 id="text1" class="auto-style4" style="height: 150px; position: relative; left: 0px; top: -15px;">
+<h1 id="text1" class="auto-style4" style="height: 150px; position: relative;">
 CC</h1>
 </button></p>
