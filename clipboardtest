@@ -1,4 +1,13 @@
-$("button").click(function(){ $("textarea").select(); document.execCommand('copy'); });
+<p id="p1">복사하고 싶은 텍스트</p>
+<button onclick="copyToClipboard('#p1')">텍스트 복사</button>
 
-<script src="http://code.jquery.com/jquery-3.2.1.js"></script> <button>Select</button> <br/> <textarea></textarea>
-
+<script>
+function copyToClipboard(element) {
+var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+document.execCommand("copy");
+  $temp.remove();
+alert("copy complete"); //Optional Alert, 삭제해도 됨
+}
+</script>
