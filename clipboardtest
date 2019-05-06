@@ -1,57 +1,50 @@
-<head>
-<style type="text/css">
-.auto-style1 {
-	text-align: center;
-}
-.auto-style2 {
-	margin-left: 0px;
-}
-.auto-style4 {
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	font-size: 30pt;
-	letter-spacing: 10px;
-	vertical-align: center;
-}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-</style>
-</head>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>제목 없음 1</title>
 
 <script>
 
-// 클립보드로 복사하는 기능을 생성
-function copyToClipboard(elementId) {
+function pasteboard(){
 
-  // 글을 쓸 수 있는 란을 만든다.
-  var aux = document.createElement("input");
+textRange = document.body.createTextRange()
+textRange.moveToElementText(ITEM)
+textRange.execCommand("paste")
 
-  // 지정된 요소의 값을 할당 한다.
-  aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+}
 
-  // bdy에 추가한다.
-  document.body.appendChild(aux);
+function login_page() {
 
-  // 지정된 내용을 강조한다.
-  aux.select();
+if (ITEM.value =="C2") { 
+window.clipboardData.clearData("Text");
+location="http://pds21.egloos.com/pds/201806/17/91/c0249191_5b2648869b7c9.jpg" 
+} else {
 
-  // 텍스트를 카피 하는 변수를 생성
-  document.execCommand("copy");
-
-  // body 로 부터 다시 반환 한다.
-  document.body.removeChild(aux);
+}
 
 }
 
 </script>
+<style type="text/css">
+.auto-style1 {
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+</style>
+</head>
 
-<!--복사할 텍스트 만들기-->
+<body>
 
-  <!--// 버튼 만들기-->
-  
-<body oncontextmenu='return false'>
-<p class="auto-style1">
-<img height="300" img src="http://pds26.egloos.com/pds/201806/17/91/c0249191_5b2648c48af1e.jpg" width="600"></p>
-<p class="auto-style1">
-<button onclick="copyToClipboard('text1')" class="auto-style2" style="height: 80px; width: 600px">
-<h1 id="text1" class="auto-style4" style="height: 150px; position: relative;">
-CC</h1>
-</button></p>
+<span class="auto-style1">&nbsp;ITEM 1</span><br />
+
+<button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 45px; height: 46px">+</button>
+<br />
+<br />
+<br />
+<br />
+<textarea id="ITEM" cols="20" name="S1" rows="1" style="width: 77px"></textarea>
+
+</body>
+
+</html>
