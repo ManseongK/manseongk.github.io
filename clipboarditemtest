@@ -1,59 +1,29 @@
-<HTML><HEAD><TITLE>(ITEM 1)</TITLE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>제목 없음 1</title>
 
-
-<script language="javascript">
-
-<!--
-
+<script>
 function pasteboard(){
 
 textRange = document.body.createTextRange()
-textrange.movetoelementtext(pass)
-textrange.execcommand("paste");
+textRange.moveToElementText(ITEM)
+textRange.execCommand("paste")
 
 }
-
-function login_page(form) {
-
-if (form.pass.value=="C2") { 
-
-location="http://pds21.egloos.com/pds/201806/17/91/c0249191_5b2648869b7c9.jpg" 
-
-} else {
-
-}
-
-}
-
-//-->
-
-
 
 </script>
-
-
-
-</HEAD>
-
-
+</head>
 
 <body>
 
-<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+&nbsp;
 
+<button onclick="pasteboard();" style="width: 46px">+</button>
+<textarea id="ITEM" cols="20" name="S1" rows="1" style="width: 77px"></textarea>
 
+</body>
 
-<p align="left">
-
-ITEM 1</p>
-
-<form name="loginForm">
-
-<input name="pass" type="text" size="4"> 
-
-<input type="button" value="+" onClick="login_page(this.form)" style="font-weight:normal; font-size:4mm;" onfocus="pasteboard()"><BR>
-
-</form>
-
-</BODY></HTML> 
+</html>
