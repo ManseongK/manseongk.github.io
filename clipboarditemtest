@@ -19,6 +19,8 @@ textRange.execCommand("paste")
 
 <body>
 
+<body oncontextmenu="return false">
+
 &nbsp;
 
 <button onclick="pasteboard();" style="width: 46px">+</button>
