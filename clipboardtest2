@@ -65,6 +65,6 @@ function copyToClipboard(elementId) {
 <button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="height: 80px; width: 600px">
 <h2 class="auto-style5" style="line-height: 80px; height : 80px; width: 600px;">&nbsp;<strong>획득</strong></h2>
 <h1 id="text1" class="auto-style4" style="visibility: hidden" unselectable="on" visible="true">
-CC</h1>
+C2</h1>
 
 </button></p>
