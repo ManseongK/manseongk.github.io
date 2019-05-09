@@ -63,7 +63,7 @@ function copyToClipboard(elementId) {
 <img height="300" img src="http://pds26.egloos.com/pds/201806/17/91/c0249191_5b2648c48af1e.jpg" width="600"></p>
 <p class="auto-style1">
 <button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="height: 80px; width: 600px">
-<h2 class="auto-style5" style="line-height: 80px; height : 70px; width: 600px;">&nbsp;<strong>획득</strong></h2>
+<h2 class="auto-style5" style="line-height: 80px; height : 80px; width: 600px;">&nbsp;<strong>획득</strong></h2>
 <h1 id="text1" class="auto-style4" style="visibility: hidden" unselectable="on" visible="true">
 C2</h1>
 
