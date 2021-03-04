@@ -37,7 +37,7 @@ location="http://pds21.egloos.com/pds/201806/17/91/c0249191_5b2648869b7c9.jpg"
 
 <body>
 
-<button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 85px; height: 82px" class="auto-style1">
+<button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 82px; height: 82px" class="auto-style1">
 ITEM1</button>
 <br />
 <br />
