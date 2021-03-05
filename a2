@@ -1,24 +1,8 @@
 <head>
 
-<!--오른쪽 클릭 금지 시작-->
-	<script type="text/javascript">
-		var omitformtags = ["input", "textarea", "select"]
-		omitformtags = omitformtags.join("|")
-		function disableselect(e){
-		if (omitformtags.indexOf(e.target.tagName.toLowerCase()) == -1)
-			return false
-		}
-		function reEnable(){
-			return true
-		}
-		if (typeof document.onselectstart != "undefined")
-		document.onselectstart = new Function ("return false")
-		else{
-			document.onmousedown = disableselect
-			document.onmouseup = reEnable
-		}
-	</script>
-<!--오른쪽 클릭 금지 끝-->
+<script language="javascript">
+document.oncontextmenu = function(){return false;}
+</script>
 
 <meta charset="utf-8">
 <style type="text/css">
@@ -45,6 +29,8 @@
 	border-width: 4px;
 }
 </style>
+
+
 
 </head>
 
