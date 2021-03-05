@@ -25,6 +25,23 @@
 }
 </style>
 
+<script type="text/javascript">
+		var omitformtags = ["input", "textarea", "select"]
+		omitformtags = omitformtags.join("|")
+		function disableselect(e){
+		if (omitformtags.indexOf(e.target.tagName.toLowerCase()) == -1)
+			return false
+		}
+		function reEnable(){
+			return true
+		}
+		if (typeof document.onselectstart != "undefined")
+		document.onselectstart = new Function ("return false")
+		else{
+			document.onmousedown = disableselect
+			document.onmouseup = reEnable
+		}
+	</script>
 </head>
 
 <script>
@@ -46,7 +63,7 @@ function copyToClipboard(elementId) {
 <p class="auto-style1">
 <img height="320" img src="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293a85d51b.jpg" width="621"></p>
 <p class="auto-style1">
-<button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="background-color:black; height: 80px; width: 600px">
+<button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="background-color:black; height: 80px; width: 621px">
 <h2 class="auto-style5" style="color:white; line-height: 40px; height : 80px; width: 600px;">&nbsp;<strong>획득</strong></h2>
 <h1 id="text1" class="auto-style4" style="visibility: hidden" unselectable="on" visible="true">
 650</h1>
