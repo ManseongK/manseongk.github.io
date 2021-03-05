@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>제목 없음 1</title>
 
 <script>
@@ -33,17 +33,17 @@ location="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293399a491.jpg"
 	font-size: medium;
 }
 </style>
+<meta name="generator" content="namo webeditor(trial)" />
 </head>
 
-<body>
-
-<button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 83px; height: 83px" class="auto-style1">
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+<button onclick="pasteboard(); login_page();item.value='';" style="width: 83px; height: 83px" class="auto-style1">
 ITEM1</button>
 <br />
 <br />
 <br />
 <br />
-<textarea id="ITEM" cols="20" name="S1" rows="1" style="width: 77px"></textarea>
+<textarea id="item" cols="20" name="s1" rows="1" style="width: 77px"></textarea>
 
 </body>
 
