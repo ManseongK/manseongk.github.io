@@ -59,7 +59,7 @@ function copyToClipboard(elementId) {
 </script>
 
   
-<body oncontextmenu='return false' style="background-color:black">
+<body style="background-color:black" oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 <p class="auto-style1">
 <img height="320" img src="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293a85d51b.jpg" width="621"></p>
 <p class="auto-style1">
