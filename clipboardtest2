@@ -24,6 +24,7 @@
 	border-width: 4px;
 }
 </style>
+<meta name="generator" content="Namo WebEditor(Trial)">
 
 </head>
 
@@ -58,7 +59,7 @@ function copyToClipboard(elementId) {
 
   <!--// 버튼 만들기-->
   
-<body oncontextmenu='return false'>
+<body oncontextmenu='return false' background="http://pds18.egloos.com/pds/202103/06/91/c0249191_60429d6768e6f.png">
 <p class="auto-style1">
 <img height="320" img src="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293a85d51b.jpg" width="621"></p>
 <p class="auto-style1">
