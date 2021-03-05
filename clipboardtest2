@@ -24,7 +24,6 @@
 	border-width: 4px;
 }
 </style>
-<meta name="generator" content="Namo WebEditor(Trial)">
 
 </head>
 
@@ -63,8 +62,8 @@ function copyToClipboard(elementId) {
 <p class="auto-style1">
 <img height="320" img src="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293a85d51b.jpg" width="621"></p>
 <p class="auto-style1">
-<button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="height: 80px; width: 600px">
-<h2 class="auto-style5" style="line-height: 40px; height : 80px; width: 600px;">&nbsp;<strong>획득</strong></h2>
+<button onclick="copyToClipboard('text1');alert('아이템을 획득하였습니다.')" class="auto-style2" style="background-color:black; height: 80px; width: 600px">
+<h2 class="auto-style5" style="color:white; line-height: 40px; height : 80px; width: 600px;">&nbsp;<strong>획득</strong></h2>
 <h1 id="text1" class="auto-style4" style="visibility: hidden" unselectable="on" visible="true">
 650</h1>
 
