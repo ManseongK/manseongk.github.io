@@ -19,7 +19,7 @@ function login_page() {
 
 if (ITEM.value =="650") { 
 window.clipboardData.clearData("Text");
-location="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293399a491.jpg" 
+location="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293a85d51b.jpg" 
 } else {
 
 }
