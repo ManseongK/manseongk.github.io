@@ -36,7 +36,7 @@ document.getElementById("div").style.backgroundRepeat = "no-repeat";
 </style>
 </head>
 
-<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+<body style=background-color:black; oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 
 <button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 83px; height: 83px" class="auto-style1">
 ITEM1</button>
