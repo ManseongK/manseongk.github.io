@@ -19,7 +19,7 @@ function login_page() {
 
 if (ITEM.value =="650") { 
 window.clipboardData.clearData("Text");
-location="http://pds20.egloos.com/pds/202103/06/91/c0249191_604293399a491.jpg" 
+location="https://manseongk.github.io/ai1" 
 document.getElementById("div").style.backgroundRepeat = "no-repeat";
 } else {
 
@@ -36,7 +36,7 @@ document.getElementById("div").style.backgroundRepeat = "no-repeat";
 </style>
 </head>
 
-<body style=background-color:black; oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 
 <button onclick="pasteboard(); login_page();ITEM.value='';" style="width: 83px; height: 83px" class="auto-style1">
 ITEM1</button>
