@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+
+    <style>
+        .inventory {
+            background-color: black;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border: solid 1px black;
+            margin-top: 5px;
+            float:left;
+            margin-right: 3px;
+        }
+    </style>
+
+    <script>
+        function getItem(key) {
+            alert(key + "아이템을 흭득했습니다.");
+            var item, slot;
+            item = slot = "";
+            switch(key) {
+                case "[열쇠 꾸러미]":
+                    localStorage.setItem('item01', '열쇠 꾸러미');
+                    item = "열쇠 꾸러미";
+                    slot="slot01";
+                    break;
+                case "[사다리]":
+                    item = "사다리";
+                    slot="slot02";
+                    break;
+                case "[라이터]":
+                    item = "라이터";
+                    slot="slot03";
+                    break;
+                case "[횃불]":
+                    item = "횃불";
+                    slot="slot04";
+                    break;
+            }
+            
+            // document.getElementById("slot01").innerHTML="라이터";
+            // slot01은 태그의 id 값과 대응되면 된다.
+            document.getElementById(slot).innerHTML=item;
+            location.href="example02.html";
+            
+        }
+    </script>
+</head>
+<body>
+
+
+    <input type="button" value="열쇠 꾸러미" onclick="getItem('[열쇠 꾸러미]')" />
+    <input type="button" value="사다리" onclick="getItem('[사다리]')" />
+    <input type="button" value="라이터" onclick="getItem('[라이터]')" />
+    <input type="button" value="횃불" onclick="getItem('[횃불]')" />
+
+    <hr>
+    <div class="inventory" id="slot01">슬롯1</div>
+    <div class="inventory" id="slot02">슬롯2</div>
+    <div class="inventory" id="slot03">슬롯3</div>
+    <div class="inventory" id="slot04">슬롯4</div>
+    <div class="inventory" id="slot05">슬롯5</div>
+
+</body>
+</html>
