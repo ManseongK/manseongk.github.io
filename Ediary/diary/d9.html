@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이어리</title>
+
+    <script>
+
+    function inventoryClear() {
+        localStorage.clear();
+    }
+
+    function getItem(key) {
+        alert(key + " 아이템을 흭득했습니다.");
+        var item, slot;
+        item = slot = "";
+        switch(key) {
+              case "펜":
+            localStorage.setItem('item01', '펜');
+            item = "펜";
+            slot="slot01";
+            break;
+          }
+      }
+
+    </script>
+
+    <style>
+        .inventory {
+            background-color: black;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    </style>
+
+</head>
+<body style=background-color:black; oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+<table border=1px, bordercolor="skyblue", width=650px>
+    <th height=60px colspan="2" style="color:white">[ 교환일기 ]</th>
+  <tr>
+    <th width=420px, height=300px, style="color:white">
+
+<p>스테이지 9 테스트</p>
+
+<p style=color:red>스테이지 9 테스트</p>
+
+    </th>
+  </tr>
+  <tr>
+    <th height=35px>
+      <div style="margin:auto; width:600px; color:darkgrey" class="inventory" id="slot01">펜을 보유시 이곳에 스테이지 코드가 생성됩니다.</div>
+    </th>
+  </tr>
+</table>
+
+</body>
+
+<script>
+var item = "";
+if(item = localStorage.getItem('item01')) {
+    document.getElementById("slot01").innerHTML=
+    "테스트코드9";
+}
+
+</script>
+</html>
